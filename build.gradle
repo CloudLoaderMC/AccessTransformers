@@ -15,7 +15,7 @@ apply plugin: 'org.javamodularity.moduleplugin'
 
 group 'ml.cloudmc'
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(16)
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 version = gradleutils.getTagOffsetVersion()
 println('Version: ' + version)
@@ -43,7 +43,7 @@ sourceSets {
 
 compileJava {
     dependsOn generateGrammarSource
-    targetCompatibility = sourceCompatibility = 17
+    targetCompatibility = sourceCompatibility = JavaLanguageVersion.of(17)
 }
 
 jar.manifest = manifest {
